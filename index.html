@@ -9,39 +9,46 @@
 </head>
 <body>
     <h1>Calculator</h1>
+    <div class="container">
+        <div style="width: 33%; height: 70;"></div>
+    <div class="container2">
     <div id="TextBox">
-        <input id="input" type="text">
+        <div id="input">0</div>
+        <div id="operator"></div>
     </div>   
     <div id="btnpnl">
-        <div id="row">
-            <button id="1" class="btnPnl"> 1 </button>
-            <button id="2" class="btnPnl"> 2 </button>
-            <button id="3" class="btnPnl"> 3 </button>
-            <button id="+" class="btnPnl"> + </button>
+        <div class="row">
+            <button id="1" class="btnPnl btn num">1</button>
+            <button id="2" class="btnPnl btn num">2</button>
+            <button id="3" class="btnPnl btn num">3</button>
+            <button id="+" class="btnPnl btn operator">+</button>
         </div>
-        <div id="row"> 
-            <button id="4" class="btnPnl"> 4 </button>
-            <button id="5" class="btnPnl"> 5 </button>
-            <button id="6" class="btnPnl"> 6 </button>
-            <button id="-" class="btnPnl"> - </button>
+        <div class="row"> 
+            <button id="4" class="btnPnl btn num">4</button>
+            <button id="5" class="btnPnl btn num">5</button>
+            <button id="6" class="btnPnl btn num">6</button>
+            <button id="-" class="btnPnl btn operator">-</button>
         </div>
-        <div id="row">
-            <button id="7" class="btnPnl"> 7 </button>
-            <button id="8" class="btnPnl"> 8 </button>
-            <button id="9" class="btnPnl"> 9 </button>
-            <button id="*" class="btnPnl"> * </button>
+        <div class="row">
+            <button id="7" class="btnPnl btn num">7</button>
+            <button id="8" class="btnPnl btn num">8</button>
+            <button id="9" class="btnPnl btn num">9</button>
+            <button id="*" class="btnPnl btn operator">*</button>
         </div>
-        <div id="row">
-            <button id="0" class="btnPnl"> 0 </button>
-            <button id="." class="btnPnl"> . </button>
-            <button id="=" class="btnPnl"> = </button>
-            <button id="/" class="btnPnl"> / </button>
+        <div class="row">
+            <button id="0" class="btnPnl btn num">0</button>
+            <button id="." class="btnPnl btn num">.</button>
+            <button id="=" class="btnPnl btn equal">=</button>
+            <button id="/" class="btnPnl btn operator">/</button>
         </div>
-        <div id="row"> 
-            <button id="cls" class="btnPnl"> Clear </button>
+        <div class="row"> 
+            <button id="cls" class="btn cls"> Clear</button>
+            <button id="del" class="btn cls"> Del</button>
         </div>
     </div>
-
+</div> 
+    <div style="width: 33%; height: 70;"></div>
+</div>
 
     <script src="script.js"></script>
 </body>

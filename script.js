@@ -1,14 +1,39 @@
 let text="",result=0;
 let isEval=false;
+let firstNum=0,secondNum=0,operator='';
 
-let btnpnl=document.querySelectorAll(`.btnPnl`);
+// let btnpnl=document.querySelectorAll(`.btnPnl`);
+let buttonPanel=document.querySelectorAll(`.num`);
+let operatorBtns=document.querySelectorAll(`.operator`);
+let equalBtn=document.querySelector(`.equal`);
+let clearBtn=document.querySelector(`.cls`);
+let DelBtn=document.querySelector(`#del`);
 let txtbx=document.querySelector("#input");
+let operatorbx=document.querySelector("#operator");
 
 function Add(num1,num2){return num1+num2;}
 function Subtract(num1,num2){return num1-num2;}
 function Multiply(num1,num2){return num1*num2;}
 function Divide(num1,num2){return num1/num2;}
-
+function HandleClick(btn)
+{
+    if(text.length>11)
+        return;
+    text+=btn.textContent;
+    txtbx.textContent=text;
+}
+function getOperand()
+{
+    let Num=txtbx.textContent;
+    text="";
+    return Number(Num);
+}
+function getOperator(btn)
+{
+    operatorbx.textContent=btn.id;
+    return btn.id;
+    
+}
 function operate(num1,num2,operator)
 {
     switch( operator)
@@ -25,49 +50,51 @@ function operate(num1,num2,operator)
             return Number(text);
     }
 }
-function evlauate(str)
-{
-    let firstNum=0,secondNum=0,operator='';
-    let operators="+-*/";
-    for(let i=0;i<str.length;i++)
-    {
-        if(operators.includes(str[i]))
+
+buttonPanel.forEach
+(
+    btn =>btn.addEventListener
+    ("click",()=>
         {
-            firstNum=Number(str.slice(0,i));
-            secondNum=Number(str.slice(i+1,str.length));
-            operator=str[i];
-            break;
+            HandleClick(btn);
         }
-    }
-    text=operate(firstNum,secondNum,operator);
-    txtbx.value=text;
-    result=text;
-    if(isEval==true)
-        text="";
-    isEval=true;
-}
-
-
-for(let i=0;i<17;i++)
-{
-    if(i==14)
-    {       //
-        btnpnl[i].addEventListener("click",()=>{evlauate(text);});
-        continue;
-    }
-    else if(i==16)
+    )
+)
+operatorBtns.forEach
+(
+    btn =>btn.addEventListener
+    ("click",()=>
+        {
+            firstNum=getOperand();
+            operator=getOperator(btn);
+        }
+    )
+)
+equalBtn.addEventListener
+(
+    "click",()=>
     {
-        btnpnl[i].addEventListener(
-            "click",()=>{
-            text="";
-            txtbx.value=text;}
-        );
-        continue;
+        secondNum=getOperand();
+        txtbx.textContent=operate(firstNum,secondNum,operator)
+        operatorbx.textContent="";
     }
-    btnpnl[i].addEventListener(
-        "click",()=>{
-        isEval?false:true;
-        text+=  btnpnl[i].id
-        txtbx.value=text;
-    });
-}
+);
+clearBtn.addEventListener
+(
+    "click",()=>
+    {
+        text="";
+        txtbx.textContent=text;
+        operatorbx.textContent=text;
+    }
+);
+DelBtn.addEventListener
+(
+    "click",()=>
+    {
+        text=text.slice(0,text.length-1)
+        txtbx.textContent=text;
+    }
+);
+
+
