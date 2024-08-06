@@ -7,7 +7,7 @@ let txtbx=document.querySelector("#input");
 function Add(num1,num2){return num1+num2;}
 function Subtract(num1,num2){return num1-num2;}
 function Multiply(num1,num2){return num1*num2;}
-function Divide(num1,num2){return num1-num2;}
+function Divide(num1,num2){return num1/num2;}
 
 function operate(num1,num2,operator)
 {
@@ -55,14 +55,6 @@ for(let i=0;i<17;i++)
         btnpnl[i].addEventListener("click",()=>{evlauate(text);});
         continue;
     }
-    // else if(i==3)
-    // {
-    //     // btnpnl[i].addEventListener(
-    //     //     "click",()=>{
-    //     //     // isEval=false;
-    //     //     }
-    //     // );
-    // }
     else if(i==16)
     {
         btnpnl[i].addEventListener(
@@ -79,4 +71,3 @@ for(let i=0;i<17;i++)
         txtbx.value=text;
     });
 }
-// let btnpnl=document.querySelectorAll(".1")
