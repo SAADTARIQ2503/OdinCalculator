@@ -1,4 +1,5 @@
-let text="";
+let text="",result=0;
+let isEval=false;
 
 let btnpnl=document.querySelectorAll(`.btnPnl`);
 let txtbx=document.querySelector("#input");
@@ -16,10 +17,12 @@ function operate(num1,num2,operator)
             return Add(num1,num2);
         case '-':
             return Subtract(num1,num2);
-            case '*':
+        case '*':
             return Multiply(num1,num2);
         case '/':
             return Divide(num1,num2);
+        default :
+            return Number(text);
     }
 }
 function evlauate(str)
@@ -38,17 +41,28 @@ function evlauate(str)
     }
     text=operate(firstNum,secondNum,operator);
     txtbx.value=text;
-    text="";
+    result=text;
+    if(isEval==true)
+        text="";
+    isEval=true;
 }
 
 
 for(let i=0;i<17;i++)
 {
     if(i==14)
-    {
+    {       //
         btnpnl[i].addEventListener("click",()=>{evlauate(text);});
         continue;
     }
+    // else if(i==3)
+    // {
+    //     // btnpnl[i].addEventListener(
+    //     //     "click",()=>{
+    //     //     // isEval=false;
+    //     //     }
+    //     // );
+    // }
     else if(i==16)
     {
         btnpnl[i].addEventListener(
@@ -59,7 +73,9 @@ for(let i=0;i<17;i++)
         continue;
     }
     btnpnl[i].addEventListener(
-        "click",()=>{text+=  btnpnl[i].id
+        "click",()=>{
+        isEval?false:true;
+        text+=  btnpnl[i].id
         txtbx.value=text;
     });
 }
