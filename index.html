@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <style>
+        h1{
+            text-align: center;
+            font-size: 60px;
+        }
+        #TextBox{
+            display: flex;
+            justify-content: center;
+            
+        }
+        #input{
+           height: 75px;
+           width: 400px;
+           text-align: right;
+           font-size:26px;
+           font-weight: 700;
+        }
+        #btnpnl{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            margin-top: 3px;
+        }
+        #row{
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+        }
+        .btnPnl{
+            min-width: 100px;
+            min-height: 80px;
+            margin: 2px;
+            font-size: 32px;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Calculator</h1>
+    <div id="TextBox">
+        <input id="input" type="text">
+    </div>   
+    <div id="btnpnl">
+        <div id="row">
+            <button id="1" class="btnPnl numbers"> 1 </button>
+            <button id="2" class="btnPnl numbers"> 2 </button>
+            <button id="3" class="btnPnl numbers"> 3 </button>
+            <button id="add" class="btnPnl numbers"> + </button>
+        </div>
+        <div id="row"> 
+            <button id="4" class="btnPnl numbers"> 4 </button>
+            <button id="5" class="btnPnl numbers"> 5 </button>
+            <button id="6" class="btnPnl numbers"> 6 </button>
+            <button id="sub" class="btnPnl numbers"> - </button>
+        </div>
+        <div id="row">
+            <button id="7" class="btnPnl numbers"> 7 </button>
+            <button id="8" class="btnPnl numbers"> 8 </button>
+            <button id="9" class="btnPnl numbers"> 9 </button>
+            <button id="mul" class="btnPnl numbers"> * </button>
+        </div>
+        <div id="row">
+            <button id="0" class="btnPnl numbers"> 0 </button>
+            <button id="pnt" class="btnPnl"> . </button>
+            <button id="eql" class="btnPnl"> = </button>
+            <button id="div" class="btnPnl"> / </button>
+        </div>
+        <div id="row"> 
+            <button id="cls" class="btnPnl"> Clear </button>
+        </div>
+    </div>
+
+
+    <script src="script.js"></script>
+</body>
+</html>
